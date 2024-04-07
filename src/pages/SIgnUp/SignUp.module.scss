@@ -1,0 +1,151 @@
+.signup_form {
+    width: 100%;
+    height: 95vh;
+    
+    
+    
+    .signupContent{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 10px;
+        border-radius: 10px;
+
+
+    .signup_form_logo {
+        // position: relative;
+
+        img {
+            width: 120px;
+            display: block
+        }
+    }
+
+    .signupheading {
+        margin-bottom: 10px;
+        h3 {
+            font-family: Lorin;
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 40px;
+            text-align: left;
+            color: #232323;
+
+        }
+    }
+
+    .formofSignup {
+        // width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+
+
+        .signupFormItem {
+           width: 450px;
+        // width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            // align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+              
+            @media (max-width:479px) {
+                width: 800px;
+            }
+
+            .signupLabel {
+                font-family: Lorin;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 18px;
+                text-align: left;
+                color: #232323;
+                display: block;
+                margin-bottom: 5px;
+
+            }
+
+            .passwordInput {
+                position: relative;
+                width: 100%; 
+                // max-width: 430px; 
+            
+                .toggle_password {
+                    position: absolute;
+                    right: 5px; 
+                    top: 40%; 
+                    bottom: -16px;
+                    transform: translateY(-50%); 
+                }
+            }
+            
+
+
+        }
+
+        .signupFormItemButton {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .gotoLoginPage {
+            font-family: Lorin;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20.96px;
+            text-align: left;
+            font-family: Lorin;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 16px;
+            text-align: left;
+            margin-top: 18px;
+               span{
+                   color: #4B0082;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline; 
+                    color: #800080; 
+                  }
+              
+                  &:active {
+                    color: #0000ff; 
+                  }
+               }
+        }
+
+    }
+
+}
+ 
+@media screen and (max-width: 513px) {
+    .signupContent {
+        width: 100%;
+
+    .signup_form_logo img {
+        
+    }
+
+    .formofSignup {
+        width: 100%;
+        .signupFormItem {
+            width: 100%;
+        }
+    }
+
+  
+    }
+
+
+}
+}

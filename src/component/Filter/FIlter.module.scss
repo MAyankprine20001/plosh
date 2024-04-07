@@ -1,0 +1,176 @@
+// Filter.module.scss
+.rightSideMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: #fff;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+  z-index: 10;
+  background: #E3E3E3;
+
+  @media (max-width: 500px) {
+    width: 80%;
+    right: 0;
+    width: 0;
+    top: 0;
+  }
+
+  &.open {
+    width: 450px;
+    @media (max-width: 500px) {
+      width: 70%;
+    }
+  }
+
+  .menuContent {
+    padding: 20px;
+
+    .HeadingSidemenu {
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      p {
+        font-family: Lorin;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: left;
+        color: #232323;
+
+        @media (max-width:353px) {
+          font-size: 27px;
+        }
+
+      }
+     
+      .closeIcon{
+        position: absolute;
+         top: 0px;
+        .closeButtonicons{
+          width: 30px;
+        }
+      }
+
+    }
+
+    .filterbox2 {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 25px;
+      .sort {
+        font-family: Lorin;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: left;
+        color: #232323;
+        margin-bottom: 10px;
+        @media (max-width:353px) {
+          font-size: 20px;
+          margin-top: 15px;
+          font-weight: 600;
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 24px;
+        .auth {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .head {
+            font-family: Lorin;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 18px;
+            text-align: left;
+            color: #232323;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .sortOfCuisions {
+      p {
+        font-family: Lorin;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: left;
+        color: #232323;
+        margin-bottom: 20px;
+        @media (max-width:385px) {
+          font-size: 17px;
+          width: 100%;
+        }
+      }
+      .checkboxContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        margin-top: 5px;
+        gap: 10px;
+        input[type="checkbox"] {
+        }
+        label {
+          font-family: Lorin;
+          font-size: 25px;
+          font-weight: 400;
+          line-height: 19.65px;
+          font-weight: 500;
+          color: #232323;
+        }
+      }
+    }
+
+    .cuisines {
+      color: #232323;
+      font-weight: 700;
+    }
+
+    .checkbox {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      .inputs {
+        margin-bottom: 10px;
+        .squarebox {
+        }
+        .cuisine {
+          font-size: 20px;
+          font-weight: 400;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .filterbox4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .closeIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}
+
+

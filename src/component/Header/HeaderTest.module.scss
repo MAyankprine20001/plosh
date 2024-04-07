@@ -1,0 +1,170 @@
+
+
+.header{
+    width: 100%;
+    background: #7d5aad;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    overflow-x: hidden;
+
+    .logodiv{
+            margin:5px 40px;
+            cursor: pointer;
+        .logo{
+            height: 100px;
+            width: 100px;
+            @media screen and (max-width:380px) {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}
+.header1{
+    width: 100%;
+    background: #4B0082;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:10;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 3px 5px gray;
+    padding: 10px 15px;
+    overflow: hidden;
+    @media screen and (max-width:390px) {
+        justify-content: flex-start;
+    }
+    .logodiv1{
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            @media screen and (max-width:588px) {
+                margin:5px;
+            }
+            .logo1{
+            height: 100px;
+            width: 100px;
+            @media screen and (max-width:588px) {
+                height: 60px;
+                width: 60px;
+            }
+           
+        }
+    }
+    .right{
+        width: 75%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        @media screen and (max-width:700px) {
+            // justify-content: flex-end;
+            // margin-right: 95px;
+            width: 80%;
+
+        }
+        @media screen and (max-width:320px) {
+            // justify-content: flex-end;
+            // margin-right: 95px;
+            width: 75%;
+
+        }
+       
+        
+        .navLink {
+            text-decoration: none;
+            color: inherit; 
+            transition: color 0.3s; 
+            width: 100px;
+             
+            &:hover,
+            &:active {
+              .homeheading {
+                font-weight: 800;
+              }
+            }
+            
+          }
+          
+
+
+       
+        .homediv{
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            font-weight: 400;
+                 
+               
+            .homeimg{
+                color: white;
+                height: 20px;
+                width: 20px;
+                margin-bottom: 5px;
+               
+            }
+            .homeheading{
+
+                 
+                    
+                        &:hover,
+                       &:active {
+                         font-weight: 800;
+                       
+                    }
+                @media screen and (max-width:700px) {
+                    font-size: 10px;
+                }
+                @media screen and (max-width:488px) {
+                    font-size: 10px;
+                    display: none;
+                }
+            }
+        }
+        .menudiv{
+            // background-color: pink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            font-weight: 400;
+            width: 100px;
+            
+
+            // line-height: 15.72px;
+            
+            .homeheading{
+                @media screen and (max-width:700px) {
+                    font-size: 10px;
+                }
+                @media screen and (max-width:488px) {
+                    display: none;
+                }
+            }
+
+            .homeimg{
+                color: white;
+                height: 20px;
+                width: 20px;
+                margin-bottom: 5px;
+            }
+
+            &:hover .homeheading {
+                 /* Change color of Menu text on hover */
+                 font-weight: 800;
+              }
+        }
+    }
+    
+}

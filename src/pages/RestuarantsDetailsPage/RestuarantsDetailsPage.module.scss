@@ -1,0 +1,487 @@
+.DetailContainer {
+    width: 100%;
+    font-family: 'Lorin';  
+   
+    .topsection {
+      position: relative; 
+      width: 100%;
+  
+      .topsectionImg {
+        position: relative;
+  
+        .img {
+          width: 100%;
+          height: 600px;
+          min-height: 400px;
+          object-fit: cover;
+          @media screen and (max-width:600px) {
+            height: 500px;
+          }
+        }
+  
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5); 
+        }
+      }
+  
+      .topcontainabout {
+        // background-color: red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // width: 90%;og
+        width: 100%;
+        padding-bottom: 80px; 
+        padding: 20px;
+        box-sizing: border-box;
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        z-index: 1;
+  
+        @media screen and (max-width:500px) {
+          width: 100%;
+        }
+  
+        .innertextdiv {
+          // width: 90%; og
+          width: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-direction: column;
+        }
+  
+        .upperboxcontainer {
+          width: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-direction: column;
+  
+          .upperboxheading {
+            font-weight: 700;
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-align: left;
+            @media screen and (max-width:610px) {
+              font-size: 40px;
+              margin-bottom: 5px;
+            }
+            @media screen and (max-width:442px) {
+              font-size: 25px;
+              margin-bottom: 5px;
+            }
+          }
+  
+          .restuarantaddress {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+  
+            .locationimg {
+              height: 20px;
+              margin-right: 10px;
+              @media screen and (max-width:564px) {
+                height: 15px;
+                margin-right: 5px;
+              }
+            }
+  
+            .restuarantlocation {
+              font-size: 20px;
+              font-weight: 400;
+              text-align: left;
+              @media screen and (max-width:564px) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+  
+        .lowerboxcontainer {
+          margin: 10px 0;
+          border-top: 1px solid white;
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-evenly;
+          padding-top: 20px;
+  
+  
+          .firstbox {
+            width: 30%;
+            border-right: 2px solid white;
+            .firstreviewbox {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 0 25px;
+  
+              .star {
+                height: 30px;
+                 @media screen and (max-width:564px) {
+                  height: 20px;
+                }
+              }
+  
+              .rating {
+                font-size: 30px;
+                margin-left: 5px;
+                 @media screen and (max-width:564px) {
+                  font-size: 17px;
+                  margin-right: 5px;
+                }
+              }
+            }
+  
+            .reviewnumber {
+              font-weight: 400;
+              font-size: 30px;
+               @media screen and (max-width:564px) {
+                font-size: 14px;
+                margin-right: 5px;
+                margin-top: 5px;
+                
+
+  
+              }
+            }
+          }
+  
+          .line {
+            height: 50px;
+            width: 2px;
+            background-color: #fff;
+          }
+  
+          .secondbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 30%;
+            border-right: 2px solid white;
+  
+            padding: 0 10px;
+            .fav {
+              height: 30px;
+              margin-bottom: 3px;
+               @media screen and (max-width:564px) {
+                height: 20px;
+              }
+            }
+  
+            .Favourite {
+              font-weight: 400;
+              font-size: 30px;
+              @media screen and (max-width:564px) {
+                 font-size: 17px;
+  
+               }
+            }
+          }
+  
+          .thirdbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+  
+            .imgbox {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 3px;
+  
+              .img {
+                height: 25px;
+                margin-right: 10px;
+                @media screen and (max-width:564px) {
+                  font-size: 20px;
+  
+                }
+              }
+              .number{
+                font-size: 30px;
+                margin-left: 5px;
+                @media screen and (max-width:564px) {
+                  font-size: 17px;
+                  margin-left: 2px;
+
+  
+                }
+              }
+            }
+  
+            .photo {
+              font-weight: 400;
+              font-size: 30px;
+              @media screen and (max-width:564px) {
+                font-size: 17px;
+  
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    
+    
+    
+    
+    .aboutboxsectioncontainer{
+      // margin-top: 200px;
+        margin-top: 20px; 
+        height: 400px;
+        width: 100%;
+        // background-color: red;
+        .aboutContainer{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 90%;
+            margin: 30px auto;
+            padding: 0 10px;
+
+            // background-color: pink;
+            .Aboutheading{
+                font-weight: 700;
+                font-size: 40px;
+                color: rgba(35, 35, 35, 1);
+                padding-left: 18px;
+                margin-bottom: 10px;
+                @media screen and (max-width:450px) {
+                  font-size: 30px;
+                }
+                
+            }
+            .aboutpara{
+                font-weight: 400;
+                line-height: 25px;
+                font-size: 20px;
+                padding-left: 18px;
+                text-align: left;
+                @media screen and (max-width:450px) {
+                  font-size: 20px;
+                }
+            }
+        }
+    }
+    .cuisinesectioncontainer{
+           display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 90%;
+            margin: 20px auto;
+            padding: 0 10px;
+            // background-color: pink;
+            .cuisineheading{
+                font-weight: 700;
+                margin-bottom: 10px;
+
+                font-size: 40px;
+                color: rgba(35, 35, 35, 1);
+                padding-left: 18px;
+                @media screen and (max-width:450px) {
+                  font-size: 30px;
+                }
+            }
+            .cuisinebox{
+                display: flex;
+                align-items: center;
+                // justify-content: space-between;
+                flex-wrap: wrap;
+                // gap: 10px;
+                // width: 80%;
+                .eachcuisine{
+                    font-size: 22px;
+                    height: 45px;
+                    width: 110px;
+                    // width: 40px;
+                    border: 1px solid rgba(75, 0, 130, 1);
+                    border-radius: 5px;
+                    padding: 10px;
+                    text-align: center;
+                    // margin-left: 18px;
+                    margin: 10px 10px 20px 20px;
+                    @media screen and (max-width:500px) {
+                      // width: 100%;
+                      width: 79px;
+                      margin: 10px 5px 10px 20px;
+                      font-size: 20px;
+                    }
+    
+                }
+            }
+        
+    }
+    .menusectioncontainer{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 10px;
+           
+        .menuheading{
+            font-weight: 700;
+            font-size: 40px;
+            color: rgba(35, 35, 35, 1);
+            padding-left: 18px;
+            margin-bottom: 10px;
+            @media screen and (max-width:450px) {
+              font-size: 30px;
+            }
+            
+        }
+        .menucomponentsection{
+            width: 100%;
+        }
+    }
+    .contact{
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 90%;
+      margin: 20px auto;
+      // padding: 0 10px;
+      // background: red;
+            .phonediv{
+                width: 100%;
+                background-color: rgba(217, 217, 217, 1);
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // margin-left: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                padding: 5px 0;
+                // background: pink;
+
+                .leftdiv{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .phone{
+                        height: 30px;
+                        margin: 0 10px;
+                        @media screen and (max-width:500px) {
+                          // margin: 0 5px;
+                          height: 20px;
+
+
+                
+                        }
+                    }
+                    .phoneno{
+                        font-size: 25px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        color: rgba(35, 35, 35, 1);
+                        @media screen and (max-width:500px) {
+                          font-size: 15px;
+                          line-height: 15px;
+
+
+                
+                        }
+
+
+                    }
+                }
+                .rightdiv{
+                    font-size:20px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    padding-right: 10px;
+                    color: rgba(35, 35, 35, 1);
+                    @media screen and (max-width:500px) {
+                      // width: 100%;
+                      font-size: 15px;
+            
+                    }
+                }
+            }
+    }
+    .reviewbigbox{
+      width: 90%;
+      margin: 0 auto;
+      // background-color: red;
+      .topreviewbox{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .heading{
+          font-weight: 700;
+            font-size: 40px;
+            color: rgba(35, 35, 35, 1);
+            // padding-left: 18px;
+            margin-bottom: 10px;
+            @media screen and (max-width:450px) {
+              font-size: 30px;
+              padding-left: 10px;
+
+            }
+        }
+      }
+      .bottombox{
+        padding-top: 20px;
+        padding-bottom: 2px;
+        font-size: 20px;
+        font-weight: 400;
+        color: rgba(35, 35, 35, 1);
+      }
+    }
+
+    .morecomments{
+      padding: 25px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .viewmore{
+        font-weight: 500;
+        font-size: 25px;
+        color: rgba(75, 0, 130, 1);
+        cursor: pointer;
+      }
+    }
+
+  }
+  .nocomments{
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+  
+
+
+
+
+  .primaryBtn {
+    margin: 20px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 13px 25px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: none;
+    color: white;
+    background: #185adb;
+    transition: all 0.25s ease;
+  }
+  
+  .primaryBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+  }
