@@ -1,0 +1,30 @@
+// CustomProgressBar.module.scss
+.progressContainer {
+    position: relative;
+    width: 100%;
+    height: 21px; /* Adjust height as needed */
+  }
+  
+  .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #4B0082; /* Progress bar color */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+  }
+  
+  .thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 23px; /* Width of the thumb */
+    height: 24px; /* Height of the thumb */
+    border-radius: 50%; /* Make it circular */
+    background-color: #4B0082; /* Color of the thumb */
+    border: 2px solid #fff; /* Border color of the thumb */
+    cursor: pointer;
+    z-index: 1; /* Ensure thumb is above progress bar */
+  }
+  

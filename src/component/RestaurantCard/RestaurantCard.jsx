@@ -3,7 +3,6 @@ import styles from "./RestaurantCard.module.scss";
 import { useNavigate } from 'react-router-dom';
 
 
-
 const RestaurantCard = ({ restaurant }) => {
     const AuthenticityPercentage = (restaurant.authenticity / 10) * 100;
     const ratingPercentage = (restaurant.rating / 10) * 100;

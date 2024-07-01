@@ -1,72 +1,55 @@
 
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import styles from "./Modol.module.scss"
-import { RiCloseLine } from "react-icons/ri";
-// import reviewimage from "../Images/reviewimage.png";
 import Button from "../Button/Button";
-// import { API } from "../../API/APIS";
+import {addReview} from "../../AxiosWork/AxiosApi";
 import {toast } from "react-toastify";
+import  ProgressBar  from "../ProgressBar/ProgressBar";
+import Slider from "../Slider/Slider";
+// import CustomProgressBar from "../CustomProgressBar/CustomProgressBar";
+// import CustomThumbProgressBar from "../CustomProgressBar/CustomProgressBar";
 
 
-const Modal = ({ setIsOpen, resData }) => {
-  const [authenticityValue, setAuthenticityValue] = useState(7);
-  const [tasteValue, setTasteValue] = useState(7);
+const Modal = ({ setIsOpenModal, resData }) => {
+  const [authenticityValue, setAuthenticityValue] = useState(0);
+  const [tasteValue, setTasteValue] = useState(0);
   const [textareaValue, setTextareaValue] = useState("");
-
-
-  const Sliding = ({ value, setValue }) => {
-    const handleChange = (event) => {
-      setValue(event.target.value);
-    };
-
-    const progressWidth = `${(value - 1) * 10 + 1}%`;
-
-    return (
-      <div className={styles.sliderContainer}>
-        <input
-          type="range"
-          min="1"
-          max="10"
-          value={value}
-          className={styles.slider}
-          onChange={handleChange}
-        />
-        <div className={styles.progress} style={{ width: progressWidth }}></div>
-        <div>{value}</div>
-      </div>
-    );
-  };
-
   
-//   const restaurantid=data.restaurant_id
-//   console.log(data.restaurant_id,"im id")
 
-  const submitreview = () => {
-    const formvalues = {
+ 
+
+  const submitReview = () => {
+    console.log("chal rhe ha button" ,authenticityValue);
+    const formdata = {
         message:textareaValue,
         authenticity:authenticityValue,
         taste:tasteValue,
         restaurant:resData._id
     }
-    // console.log(formvalues, "after submit");
-    AddReview(formvalues)
-    setIsOpen(false)
+    
+    addReviews(formdata)
+    setIsOpenModal(false)
   };
 
-  const cancel = ()=>{
-    setIsOpen(false)
-    // console.log(resData,"im data")
-
+  const cancelReview = ()=>{
+    setIsOpenModal(false)
   }
-  const token = localStorage.getItem("token")
-//   console.log(token,"from token")
-  const AddReview=async(formvalues)=>{
-    // console.log(formvalues)
+  const token = localStorage.getItem("Login_user")
+  const userDataString = localStorage.getItem("User_Data");
+  let UserData;
+  if(userDataString){
+     UserData = JSON.parse(userDataString);
+     console.log(UserData , "user data coming from localstorage")
+  }
+  const avatarSrc = `http://ploshadmin.ourappdemo.com/backend/images/${UserData?.avatar}`;
+
+  const addReviews = async(formdata)=>{
+    
     try {
-        const response= await API.AddReview(formvalues,token)
-        // console.log(response)
-        if(response?.success){
-            toast.success(response?.message)
+        const response = await addReview(formdata,token)
+        
+        if(response.success){
+            toast.success(response.message)
           }
           else{
             toast.error(response.message)
@@ -78,34 +61,40 @@ const Modal = ({ setIsOpen, resData }) => {
 
   return (
     <>
-      <div className={styles.darkBG}></div>
-      <div className={styles.centered}>
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <div className={styles.namediv}>
-              <img src="" alt="img" className={styles.image} />
-              <div className={styles.info}>
-                <span className={styles.name}>Lorem ipsum</span>
-                <span className={styles.address}>Lorem ipsum</span>
+      <div className={styles.ModolContainer}></div>
+      <div className={styles.ModalContent}>
+        <div className={styles.modalsection}>
+          <div className={styles.modalHeadingContainer}>
+            <div className={styles.modalName}>
+              {/* <img src="/Mask group (1).png" alt="img" className={styles.Modalimage} /> */}
+              {/* <img src={UserData?.avator} alt="img" className={styles.Modalimage} /> */}
+              <img src={avatarSrc} alt="img" className={styles.Modalimage} />
+              <div className={styles.modalInformation}>
+                <span className={styles.personName}>{UserData?.name}</span>
+                <span className={styles.personAddress}>{UserData?.email}</span>
               </div>
             </div>
-            <div className={styles.filterbox2}>
-              <span className={styles.sort}>Rate our service from 1-10</span>
-              <div className={styles.info}>
-                <div className={styles.auth}>
-                  <div className={styles.head}>
-                    Authenticity
-                    <Sliding value={authenticityValue} setValue={setAuthenticityValue} />
+            <div className={styles.progressSection}>
+              <span className={styles.progessDesc}>Rate our service from 1-10</span>
+              <div className={styles.progressInfomation}>
+                <div className={styles.progressAuthenticity}>
+                  <div className={styles.ProgressHeading} >
+                   <p>Authenticity</p> 
+                    <ProgressBar value={authenticityValue} setValue={setAuthenticityValue} />
+                    {/* <Slider value={authenticityValue} setValue={setAuthenticityValue}/> */}
+                    
+                     {/* <CustomThumbProgressBar/> */}
                   </div>
                 </div>
-                <div className={styles.auth}>
-                  <div className={styles.head}>
-                    Taste <Sliding value={tasteValue} setValue={setTasteValue} />
+                <div className={styles.progressAuthenticity}>
+                  <div className={styles.ProgressTasteHeading} >
+                    <p>Taste</p>
+                     <ProgressBar value={tasteValue} setValue={setTasteValue}  />
                   </div>
                 </div>
               </div>
             </div>
-            <div className={styles.textdiv}>
+            <div className={styles.TextAreaSection}>
               <textarea
                 name="postContent"
                 placeholder="Share your experience "
@@ -115,11 +104,11 @@ const Modal = ({ setIsOpen, resData }) => {
               />
             </div>
           </div>
-          <div className={styles.modalActions}>
-            <div className={styles.actionsContainer}>
-              <div className={styles.btndiv}>
-                <Button btntext={"Cancel"} styleType={"reviewcancel"} handleClick={cancel} />
-                <Button btntext={"Submit"} styleType={"reviewsubmit"} handleClick={submitreview} />
+          <div className={styles.ModolButton}>
+            <div className={styles.buttonConatiner}>
+              <div className={styles.buttonSection}>
+                <Button btn={"Cancel"} styletype="reviewCancelButton" onClick={cancelReview} />
+                <Button btn={"Submit"} styletype="reviewSubmitButton" onClick={submitReview} />
               </div>
             </div>
           </div>

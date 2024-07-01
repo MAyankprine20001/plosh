@@ -3,27 +3,38 @@ import styles from "./FIlter.module.scss";
 import { cuisines } from "../../AxiosWork/AxiosApi";
 import Button from '../Button/Button';
 import Slider from '../Slider/Slider';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 const Filter = ({ isOpen, onClose, restaurant }) => {
     const [cuisinesData, setCuisinesData] = useState(null);
-    const [loading, setLoading] = useState(true); // State to track loading status
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const Data = await cuisines();
                 setCuisinesData(Data.data);
+                console.log(Data)
             } catch (error) {
                 console.error('Error fetching cuisine data:', error);
             } finally {
-                setLoading(false); // Set loading to false regardless of success or failure
+                setLoading(false); 
             }
         };
 
         fetchData();
     }, []);
+    useEffect(() => {
+        if (isOpen) {
+          document.body.style.overflow = 'hidden'; 
+        } else {
+          document.body.style.overflow = 'unset'; 
+        }
+      }, [isOpen]);
 
     return (
+        <>
+        {isOpen && <div className={styles.overlay} ></div>}
         <div className={`${styles.rightSideMenu} ${isOpen ? styles.open : ''}`}>
             <div className={styles.menuContent}>
                 {/* heading */}
@@ -42,6 +53,7 @@ const Filter = ({ isOpen, onClose, restaurant }) => {
                         <div className={styles.auth}>
                             <p className={styles.head}>Authenticity </p>
                             <Slider/>
+                            {/* <ProgressBar/> */}
                         </div>
                         <div className={styles.auth}>
                             <p className={styles.head}>Taste</p>
@@ -74,6 +86,7 @@ const Filter = ({ isOpen, onClose, restaurant }) => {
                 <Button styletype="button3" btn={"Apply"} />
             </div>
         </div>
+        </>
     );
 }
 

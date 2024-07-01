@@ -36,7 +36,7 @@ const Categories = () => {
             try {
                 setLoader(true)
                 const response = await categoryList();
-                // console.log(response);
+                console.log(response , "response api of category");
                 setCategoryData(response.data);
             } catch (error) {
                 console.log(error);
@@ -51,18 +51,17 @@ const Categories = () => {
   return (
     <div className={styles.categoriespage}>
         {
-loader===true ? <div className={styles.loader} >
+         loader===true ? <div className={styles.loader} >
          </div>
          :
         
-        <div className={styles.topdiv}>
-            <h1 className={styles.heading}>Categories</h1>
-            <div className={styles.categoriesdiv}>
+        <div className={styles.CategoryContainer}>
+            <p className={styles.heading}>Categories</p>
+            <div className={styles.categorySectionContainer}>
                 {categoryData.map((category, index) => {
                     const imageIndex = index % imagearray.length;
-                    
                     return (
-                        <div key={index} className={styles.category}>
+                        <div key={index} className={styles.category} >
                             <div className={styles.imgbox}>
                                 <img src={imagearray[imageIndex].imgSrc} alt={category.name} className={styles.img}/>
                                 <div className={styles.view}>View</div>

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SIgnUp/SignUp";
 import Forget from "../pages/Forget/Forget";
@@ -10,7 +10,8 @@ import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import SignUpTest from "../pages/SIgnUp/SignUpTest";
 import ChangePassword from "../pages/ChangePassword/ChangePassword";
 import RestuarantsDetailsPage from "../pages/RestuarantsDetailsPage/RestuarantsDetailsPage";
-
+import Home from "../pages/Home/Home";
+import Favourite from "../pages/Favourite/Favourite";
 const Router = () => {
   return (
     <Routes>
@@ -21,7 +22,7 @@ const Router = () => {
       <Route path="/forget" element={<Forget />} />
       <Route path="/restaurant" element={
       <PrivateRoute>
-        <Restaurant />
+        <Restaurant listType={"list"} />
       </PrivateRoute>
       } />
       <Route path="/category" element={
@@ -36,6 +37,12 @@ const Router = () => {
       }/>
       <Route path="/restuarantsDetailsPage" element={
        <PrivateRoute><RestuarantsDetailsPage/></PrivateRoute>
+      }/>
+       <Route path="/home" element={
+       <PrivateRoute><Restaurant listType={"map"}  /></PrivateRoute>
+      }/>
+       <Route path="/favorite" element={
+       <PrivateRoute><Favourite /></PrivateRoute>
       }/>
     </Routes>
   );

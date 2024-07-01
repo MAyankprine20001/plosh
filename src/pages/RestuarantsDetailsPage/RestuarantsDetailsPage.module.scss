@@ -1,12 +1,12 @@
-.DetailContainer {
+
+.restuarantContainer {
     width: 100%;
-    font-family: 'Lorin';  
    
-    .topsection {
+    .topContainer {
       position: relative; 
       width: 100%;
   
-      .topsectionImg {
+      .imageContainer {
         position: relative;
   
         .img {
@@ -20,35 +20,31 @@
         }
   
         .overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5); 
-        }
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%; /* Cover the entire image */
+         height: 100%; /* Cover the entire image */
+         background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+}
       }
   
-      .topcontainabout {
-        // background-color: red;
+      .textContent {
+        
         position: absolute;
         bottom: 0;
-        left: 0;
-        // width: 90%;og
         width: 100%;
         padding-bottom: 80px; 
         padding: 20px;
-        box-sizing: border-box;
         color: rgba(255, 255, 255, 1);
         text-align: center;
-        z-index: 1;
+        z-index: 2;
   
         @media screen and (max-width:500px) {
           width: 100%;
         }
   
-        .innertextdiv {
-          // width: 90%; og
+        .textContainer {
           width: 100%;
           display: flex;
           align-items: flex-start;
@@ -56,14 +52,14 @@
           flex-direction: column;
         }
   
-        .upperboxcontainer {
+        .headingcontainer {
           width: 100%;
           display: flex;
           align-items: flex-start;
           justify-content: flex-start;
           flex-direction: column;
   
-          .upperboxheading {
+          .restuarantName {
             font-weight: 700;
             font-size: 50px;
             margin-bottom: 10px;
@@ -84,7 +80,7 @@
             align-items: center;
             justify-content: flex-start;
   
-            .locationimg {
+            .ImageLocation {
               height: 20px;
               margin-right: 10px;
               @media screen and (max-width:564px) {
@@ -104,7 +100,7 @@
           }
         }
   
-        .lowerboxcontainer {
+        .ReviewRatingcontainer {
           margin: 10px 0;
           border-top: 1px solid white;
           width: 100%;
@@ -114,10 +110,10 @@
           padding-top: 20px;
   
   
-          .firstbox {
+          .ReviewContainer {
             width: 30%;
             border-right: 2px solid white;
-            .firstreviewbox {
+            .reviewSection {
               display: flex;
               align-items: center;
               justify-content: center;
@@ -180,6 +176,8 @@
             .Favourite {
               font-weight: 400;
               font-size: 30px;
+                  font-family: 'Lorin';  
+
               @media screen and (max-width:564px) {
                  font-size: 17px;
   
@@ -210,6 +208,8 @@
               .number{
                 font-size: 30px;
                 margin-left: 5px;
+                    font-family: 'Lorin';  
+
                 @media screen and (max-width:564px) {
                   font-size: 17px;
                   margin-left: 2px;
@@ -237,11 +237,10 @@
     
     
     .aboutboxsectioncontainer{
-      // margin-top: 200px;
         margin-top: 20px; 
         height: 400px;
         width: 100%;
-        // background-color: red;
+        
         .aboutContainer{
             display: flex;
             align-items: flex-start;
@@ -251,10 +250,12 @@
             margin: 30px auto;
             padding: 0 10px;
 
-            // background-color: pink;
+            
             .Aboutheading{
                 font-weight: 700;
                 font-size: 40px;
+                    font-family: 'Lorin';  
+
                 color: rgba(35, 35, 35, 1);
                 padding-left: 18px;
                 margin-bottom: 10px;
@@ -267,6 +268,8 @@
                 font-weight: 400;
                 line-height: 25px;
                 font-size: 20px;
+                    font-family: 'Lorin';  
+
                 padding-left: 18px;
                 text-align: left;
                 @media screen and (max-width:450px) {
@@ -275,7 +278,7 @@
             }
         }
     }
-    .cuisinesectioncontainer{
+    .cuisinesection{
            display: flex;
             align-items: flex-start;
             justify-content: flex-start;
@@ -283,41 +286,47 @@
             width: 90%;
             margin: 20px auto;
             padding: 0 10px;
-            // background-color: pink;
-            .cuisineheading{
+            .cuisHeading{
                 font-weight: 700;
                 margin-bottom: 10px;
-
+                font-family: 'Lorin';  
                 font-size: 40px;
                 color: rgba(35, 35, 35, 1);
                 padding-left: 18px;
-                @media screen and (max-width:450px) {
-                  font-size: 30px;
+                @media screen and (max-width:455px) {
+                  font-size: 32px;
                 }
             }
-            .cuisinebox{
+            .cuisContainer{
                 display: flex;
                 align-items: center;
-                // justify-content: space-between;
                 flex-wrap: wrap;
-                // gap: 10px;
-                // width: 80%;
-                .eachcuisine{
+                // width: 100%;
+                @media (max-width:479px) {
+                  // display: block;
+                  // flex-wrap: nowrap;
+                }
+                
+                .CuisineItem{
                     font-size: 22px;
                     height: 45px;
-                    width: 110px;
-                    // width: 40px;
+                    min-width: 130px;
                     border: 1px solid rgba(75, 0, 130, 1);
                     border-radius: 5px;
                     padding: 10px;
                     text-align: center;
-                    // margin-left: 18px;
-                    margin: 10px 10px 20px 20px;
-                    @media screen and (max-width:500px) {
-                      // width: 100%;
-                      width: 79px;
-                      margin: 10px 5px 10px 20px;
-                      font-size: 20px;
+                    margin: 10px 20px;
+                    @media  (max-width:1024px) {
+                      width: 99px;
+                      // margin: 10px 5px 10px 20px;
+                      font-size: 18px;
+                    }
+                    @media (max-width:479px) {
+                       width: 15px;
+                       height: 25px;
+                       font-size: 16px;
+                       text-align: center;
+                       padding-bottom: 25px;
                     }
     
                 }
@@ -355,8 +364,7 @@
       flex-direction: column;
       width: 90%;
       margin: 20px auto;
-      // padding: 0 10px;
-      // background: red;
+      
             .phonediv{
                 width: 100%;
                 background-color: rgba(217, 217, 217, 1);
@@ -364,11 +372,9 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                // margin-left: 20px;
                 border-radius: 5px;
                 margin-bottom: 20px;
                 padding: 5px 0;
-                // background: pink;
 
                 .leftdiv{
                     display: flex;
@@ -378,11 +384,7 @@
                         height: 30px;
                         margin: 0 10px;
                         @media screen and (max-width:500px) {
-                          // margin: 0 5px;
                           height: 20px;
-
-
-                
                         }
                     }
                     .phoneno{
@@ -408,7 +410,6 @@
                     padding-right: 10px;
                     color: rgba(35, 35, 35, 1);
                     @media screen and (max-width:500px) {
-                      // width: 100%;
                       font-size: 15px;
             
                     }
@@ -418,22 +419,27 @@
     .reviewbigbox{
       width: 90%;
       margin: 0 auto;
-      // background-color: red;
+      
       .topreviewbox{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width:305px) {
+              flex-direction: column; 
+              align-items: center;
+              justify-content: center;
+        }
         .heading{
           font-weight: 700;
             font-size: 40px;
             color: rgba(35, 35, 35, 1);
-            // padding-left: 18px;
             margin-bottom: 10px;
-            @media screen and (max-width:450px) {
+            @media  (max-width:450px) {
               font-size: 30px;
               padding-left: 10px;
 
             }
+           
         }
       }
       .bottombox{
@@ -442,6 +448,7 @@
         font-size: 20px;
         font-weight: 400;
         color: rgba(35, 35, 35, 1);
+        
       }
     }
 
@@ -457,7 +464,9 @@
         cursor: pointer;
       }
     }
-
+  
+    
+  
   }
   .nocomments{
     font-size: 20px;
@@ -484,4 +493,9 @@
   .primaryBtn:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+  }
+
+
+  .disable-scroll {
+    overflow: hidden;
   }

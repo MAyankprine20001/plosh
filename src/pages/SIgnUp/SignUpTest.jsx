@@ -144,7 +144,7 @@ const SignUpTest = () => {
             </label>
             <Input
               id="full_Name"
-              type="text"
+              type="name"
               name="name"
               styletype="signupInputBox"
               placeholder="Enter your Name"

@@ -1,0 +1,65 @@
+.progressbarContainer{
+    /* width:500px; */
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-slider {
+    width: 100%;
+    max-width: 500px;
+    height: 20px; /* Changed height to 20px */
+    margin: auto;
+    -webkit-appearance: none; /* Remove default appearance */
+    background: #ddd; /* Default track color */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .horizontal-slider::-webkit-slider-thumb {
+    cursor: pointer;
+    z-index: 100;
+    background: #ffffff;  
+    /* background: rgba(75, 0, 130, 1); */
+
+    /* border: 5px solid #3774ff; */
+    border: 5px solid  rgba(75, 0, 130, 1);
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+    -webkit-appearance: none;
+  }
+  
+  .horizontal-slider::-moz-range-thumb {
+    cursor: pointer;
+    z-index: 100;
+    background: #ffffff;
+    /* border: 5px solid #3774ff; */
+    border: 5px solid  rgba(75, 0, 130, 1);
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+  }
+  
+  .horizontal-slider::-webkit-slider-runnable-track,
+  .horizontal-slider::-moz-range-track {
+    height: 20px;
+    border-radius: 10px;
+    background: #ddd;
+  }
+
+
+  .slider-value{
+    width: 15px;
+  }
+
+  
+  
+  
+  
+  

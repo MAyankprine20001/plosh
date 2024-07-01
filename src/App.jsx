@@ -6,16 +6,17 @@ import SideMenu from "./component/SideMenu/SideMenu";
 import HeaderTest from "./component/Header/HeaderTest";
 
 function App() {
-  const [isMenuVisible,setIsMenuVisible] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+ 
+
 
   return (
     <div className={Style.appContainer}>
+     
       <SideMenu isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible} />
-      {/* <Header  />
-       */}
-       <HeaderTest isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible}/>
-       
-      <Router />
+      <HeaderTest isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible}         
+ />
+      <Router  />
     </div>
   );
 }

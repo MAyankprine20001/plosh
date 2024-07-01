@@ -62,6 +62,8 @@ const ChangePassword = () => {
         formik.setFieldTouched(name, true, false);
     };
 
+    console.log("formik is valid", !formik.isValid);
+
     return (
         <div className={styles.loginbox}>
             <img src="./Plosh 4.png" alt='plosh' className={styles.img}/>
@@ -72,7 +74,8 @@ const ChangePassword = () => {
                     <div className={styles.emailaddress}>
                         <label className={styles.label}>Old Password</label>
                         <div className={styles.showhide}>
-                            <Input name="oldPassword" control={formik.getFieldProps} required type={showOldPassword ? "text" : "password"} onChange={(e)=>handleInputChange(e)} styletype="signupInputBox" />
+                            <Input name="oldPassword" control={formik.getFieldProps} required type={showOldPassword ? "text" : "password"} onChange={(e)=>handleInputChange(e)} styletype="signupInputBox"  
+/>
                             <span className={styles.hideimg} onClick={() => setShowOldPassword(!showOldPassword)}>
                                 {showOldPassword ? <FaEye/> : <FaEyeSlash/>}
                             </span>
@@ -104,7 +107,10 @@ const ChangePassword = () => {
                 </div>
 
                 <div className={styles.btndiv}>
-                    <Button btn={loading ? "loading" : "Change Password"} styletype="signupButton" type="submit" disabled={!formik.isValid || loading}/>
+                    <Button btn={loading ? "loading" : "Change Password"} styletype="signupButton" type="submit" 
+                    // disabled={!formik.isValid || loading}
+                    disabled={!formik.isValid || loading || !formik.values.oldPassword || !formik.values.newPassword || !formik.values.confirmPassword}
+                    />
                 </div>
             </form>
         </div>

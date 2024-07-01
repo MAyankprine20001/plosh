@@ -156,3 +156,85 @@ export const reviewListComment = async (restaurantId) => {
   }
 }
 
+
+export const addReview = async (data , token) => {
+  try {
+    const response = await instance.post("/create/review",data, {
+      headers:{
+        "x-access-token":token
+      },
+    })
+    console.log(response.data)
+    return response.data
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+//get favourite git
+export const getFavouriteList = async ( token) => {
+  try {
+    const response = await instance.get("/restaurant/favourite_list", {
+      headers:{
+        "x-access-token":token
+      },
+    })
+    console.log(response.data.favoriteRestaurants , "axios mai api data kya aa rhe ha")
+    return response.data
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+// add favourite restuarant
+
+export const addFavouriteResturarant = async (id, token) => {
+  let data = {
+   "restaurantId": id
+   };
+
+   try {
+  const response = await instance.post("/restaurant/add_favourite", data, {
+    headers:{
+      "x-access-token": token,
+       'Content-Type': 'application/json'
+    },
+  })
+  console.log("axios add favourite" , response)
+  return response
+
+} catch (error) {
+  console.log(error)
+  return response
+}
+}
+
+// remove favorite restuarant 
+
+export const removeFavouriteResturarant = async (id, token) => {
+  let data = {
+   "restaurantId": id
+   };
+
+try {
+  const response = await instance.post("/restaurant/remove_favourite", data, {
+    headers:{
+      "x-access-token": token,
+       'Content-Type': 'application/json'
+    },
+  })
+  console.log(response , "axios remove  favourite")
+  return response
+
+} catch (error) {
+  console.log(error)
+  return response;
+}
+}
+
+
+
+

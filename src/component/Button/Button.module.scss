@@ -55,7 +55,7 @@
 
 .button_map,
 .button_map_active {
-  width: 90px; /* Initial width */
+  width: 90px; 
   height: 61px;
   cursor: pointer;
   gap: 0px;
@@ -72,13 +72,14 @@
 
   @media (max-width:479px) {
     height: 39px;
+    font-size: 15px;
   }
 }
 
 .button_map_active {
   background: #ffffff;
   color: #4B0082;
-  width: 90px; 
+  width: 100px; 
 }
 
 .button_list {
@@ -98,13 +99,14 @@
   transition: all 0.4s ease;
   @media (max-width:479px) {
     height: 39px;
+    font-size: 15px;
   } 
 }
 
 .active {
   background: #4B0082;
   color: white;
-  width: 90px; 
+  width: 100px; 
 }
 
 
@@ -166,6 +168,86 @@ text-align: center;
 color: #FFFFFF;
 
 
+}
+
+
+
+.reviewCancelButton{
+  width: 70px;
+height: 34px;
+top: 613px;
+left: 276px;
+gap: 0px;
+border-radius: 5px;
+border: 1px 0px 0px 0px;
+opacity: 0px;
+border: 1px solid rgba(75, 0, 130, 1);
+background: rgba(255, 255, 255, 1);
+color: rgba(75, 0, 130, 1);
+font-family: Lorin;
+font-size: 14px;
+font-weight: 700;
+line-height: 12px;
+text-align: center;
+cursor: pointer;
+&:hover {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+}
+
+
+.reviewSubmitButton{
+  width: 70px;
+height: 34px;
+top: 613px;
+left: 343px;
+gap: 0px;
+border-radius: 5px ;
+border:none;
+opacity: 0px;
+background: rgba(75, 0, 130, 1);
+font-family: Lorin;
+font-size: 14px;
+font-weight: 600;
+line-height: 12px;
+text-align: center;
+color: rgba(255, 255, 255, 1);
+cursor: pointer;
+&:hover {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+}
+
+
+
+.restuarantCardButton{
+  width: 219px;
+  height: 45px;
+  border-radius: 10px;
+  opacity: 0px;
+  font-family: Lorin;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+  background: #4b0082;
+  box-shadow: 0px 5px 5px 0px #00000040;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: 800;
+  }
+
+  @media (max-width:415px) {
+     width: 140px;
+     font-size: 16px;
+  }
 }
 
 

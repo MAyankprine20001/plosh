@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-    position: sticky;
+    position: fixed;
     top: 0;
     overflow-x: hidden;
 
@@ -25,7 +25,12 @@
         }
     }
 }
-.header1{
+.headerOpacity {
+    opacity: 0.1;
+    background-color: rgba(0, 0, 0, 0.9);  
+    pointer-events: none; 
+  }
+.headerAfterLogin{
     width: 100%;
     background: #4B0082;
     border: 1px solid grey;
@@ -41,7 +46,7 @@
     @media screen and (max-width:390px) {
         justify-content: flex-start;
     }
-    .logodiv1{
+    .logoLogin{
             width: 25%;
             display: flex;
             justify-content: center;
@@ -49,7 +54,7 @@
             @media screen and (max-width:588px) {
                 margin:5px;
             }
-            .logo1{
+            .logoIcon{
             height: 100px;
             width: 100px;
             @media screen and (max-width:588px) {
@@ -59,20 +64,18 @@
            
         }
     }
-    .right{
+    .navigationLink{
         width: 75%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         @media screen and (max-width:700px) {
-            // justify-content: flex-end;
-            // margin-right: 95px;
+            
             width: 80%;
 
         }
         @media screen and (max-width:320px) {
-            // justify-content: flex-end;
-            // margin-right: 95px;
+       
             width: 75%;
 
         }
@@ -83,15 +86,16 @@
             color: inherit; 
             transition: color 0.3s; 
             width: 100px;
-             
-            &:hover,
-            &:active {
-              .homeheading {
-                font-weight: 800;
-              }
-            }
+            
+      
+           
             
           }
+
+          .activeLink{
+            font-weight: 800;
+          }
+       
           
 
 
@@ -113,15 +117,17 @@
                 margin-bottom: 5px;
                
             }
-            .homeheading{
-
+            .Navigationheading{
+                font-weight: 500;
+                &:hover {
+                  font-weight: 700;
+                }
+                &.active {
+                  font-weight: 800;
+                }
                  
                     
-                        &:hover,
-                       &:active {
-                         font-weight: 800;
-                       
-                    }
+                    
                 @media screen and (max-width:700px) {
                     font-size: 10px;
                 }
@@ -130,9 +136,23 @@
                     display: none;
                 }
             }
+            .Navigationheading2{
+                font-weight: 800;
+               
+
+                @media screen and (max-width:700px) {
+                    font-size: 10px;
+                }
+                @media screen and (max-width:488px) {
+                    font-size: 10px;
+                    display: none;
+                }
+                
+            }
+            
         }
         .menudiv{
-            // background-color: pink;
+           
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -142,9 +162,11 @@
             width: 100px;
             
 
-            // line-height: 15.72px;
             
-            .homeheading{
+            .Navigationheading{
+                &:hover{
+                    font-weight: 800;
+                }
                 @media screen and (max-width:700px) {
                     font-size: 10px;
                 }
@@ -160,10 +182,6 @@
                 margin-bottom: 5px;
             }
 
-            &:hover .homeheading {
-                 /* Change color of Menu text on hover */
-                 font-weight: 800;
-              }
         }
     }
     

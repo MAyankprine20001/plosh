@@ -21,10 +21,11 @@
         }
         .AboutUser{
             display: flex;
-            align-items:  center;
+            align-items:  flex-start;
             justify-content: flex-start;
             flex-direction: column;
             gap: 10px;
+            margin-left: -5px;
 
             .name{
                 color: rgba(35, 35, 35, 1);

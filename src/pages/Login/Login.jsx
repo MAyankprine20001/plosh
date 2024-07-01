@@ -29,10 +29,13 @@ const Login = () => {
       setIsLoading(true); 
       try {
         const response = await loginApi(values);
-        console.log("res", response);
+        console.log("res token data", response);
+        console.log("response token kyu null ha" , response.data);
         if (response?.success) {
           toast.success(response?.message ?? "Login Successfull, Welcome");
           localStorage.setItem("Login_user", response.token);
+          // localStorage.setItem("User_Data" , JSON.stringify(response.data));
+          localStorage.setItem("User_Data", JSON.stringify(response.data));
           navigate("/restaurant");
         } else {
           toast.error(response.message);
